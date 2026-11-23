@@ -1,0 +1,12 @@
+
+# Ambiente Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Arquivos de configuração e segredos
+.env
+
+# Dados brutos gerados pelo ETL
+brutos/
