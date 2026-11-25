@@ -1,6 +1,7 @@
 
 import requests
 import json
+import csv
 
 API_URL = "http://127.0.0.1:8000" 
 
@@ -60,3 +61,22 @@ salvar_json("clientes", clientes)
 salvar_json("pedidos", pedidos)
 
 print("Arquivos brutos salvos com sucesso!")
+
+# a função abaixo lê os dados de produtos de um arquivo CSV e retorna uma lista de dicionários representando cada produto
+
+def ler_produtos():
+    caminho = "insumos/dados/produtos.csv"
+
+    with open(caminho, "r", encoding="utf-8") as arquivo:
+        leitor = csv.DictReader(arquivo)
+
+        produtos = list(leitor)
+
+    return produtos
+
+if __name__ == "__main__":
+    produtos = ler_produtos()
+
+    print(f"Total de produtos encontrados: {len(produtos)}")
+    print("Primeiro produto:")
+    print(produtos[0])

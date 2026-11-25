@@ -10,3 +10,7 @@ __pycache__/
 
 # Dados brutos gerados pelo ETL
 brutos/
+
+# Cache dos testes
+.pytest_cache/
+
